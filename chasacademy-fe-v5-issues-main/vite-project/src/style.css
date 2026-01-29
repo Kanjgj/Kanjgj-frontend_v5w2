@@ -188,3 +188,30 @@ h1, h2 {
   .split { grid-template-columns: 1fr; }
   .toolbar { flex-direction: column; align-items: stretch; }
 }
+
+
+[data-theme="light"] {
+  --bg: #ffffff;
+  --text: #000000;
+  --card: #ffffff;
+  --muted: #27271e;
+  --border: #e6e6e6;
+}
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+}
+.muted {
+  color: var(--muted);
+}
+.input {
+  background: #f9f9f9;
+  color: var(--text);
+}
+.btn {
+  color: var(--text);
+}
+
+.split section {
+  background-color: var(--card);
+}

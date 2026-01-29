@@ -4,11 +4,15 @@ const FormPage = () => {
   return (
     ` <main class="container">
       <section class="card">
+      <header class="header">
         <h1>IssueHub Mini</h1>
         <p class="muted">
           En minimal frontend för att öva GitHub Flow med Issues och Pull Requests.
         </p>
-
+        <nav class="nav">
+          <a href="https://github.com/chasacademy/fe-v5-issues">GitHub</a>
+        </nav>
+      </header>
         <div class="toolbar">
           <input id="filterInput" type="search" placeholder="Filtrera tasks..." />
           <button id="seedBtn" class="btn secondary" type="button">Lägg till demo-data</button>

@@ -4,6 +4,7 @@ const FormPage = () => {
   return (
     ` <main class="container">
       <section class="card">
+      <header class="header">
         <h1>IssueHub Mini</h1>
         <p class="muted">
           En minimal frontend för att öva GitHub Flow med Issues och Pull Requests.

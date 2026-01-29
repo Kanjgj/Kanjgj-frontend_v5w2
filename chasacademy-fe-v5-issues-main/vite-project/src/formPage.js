@@ -9,6 +9,7 @@ const FormPage = () => {
         <p class="muted">
           En minimal frontend för att öva GitHub Flow med Issues och Pull Requests.
         </p>
+        <button id="themeToggle" class="btn secondary" type="button">Dark mode</button>
         <nav class="nav">
           <a href="https://github.com/chasacademy/fe-v5-issues">GitHub</a>
         </nav>

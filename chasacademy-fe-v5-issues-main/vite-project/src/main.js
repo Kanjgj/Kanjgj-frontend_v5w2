@@ -19,6 +19,7 @@ const els = {
   seed: document.querySelector("#seedBtn"),
   backlog: document.querySelector("#backlogList"),
   done: document.querySelector("#doneList"),
+  themeToggle: document.querySelector("#themeToggle"),
 };
 
 let tasks = [
@@ -136,3 +137,30 @@ els.seed.addEventListener("click", () => {
 });
 
 render();
+
+
+const THEME_KEY = "issuehubmini.theme";
+
+function applyTheme(theme) {
+  document.documentElement.setAttribute("data-theme", theme);
+  els.themeToggle.textContent = theme === "dark" ? "Light mode" : "Dark mode";
+}
+
+function initTheme() {
+  const saved = localStorage.getItem(THEME_KEY);
+  if (saved === "dark" || saved === "light") {
+    applyTheme(saved);
+    return;
+  }
+  const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches;
+  applyTheme(prefersDark ? "dark" : "light");
+}
+
+els.themeToggle.addEventListener("click", () => {
+  const current = document.documentElement.getAttribute("data-theme") || "dark";
+  const next = current === "light" ? "dark" : "light";
+  localStorage.setItem(THEME_KEY, next);
+  applyTheme(next);
+});
+
+initTheme();
